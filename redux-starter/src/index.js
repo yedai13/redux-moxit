@@ -1,4 +1,8 @@
-let numbers = [1, 2, 3];
-numbers.map((number) => number * 2);
+let input = "   JavaScript    ";
+let output = "<div>" + input.trim() + "</div>";
 
-setTimeout(() => console.log("hello"), 1000);
+const trim = (str) => str.trim();
+const wrapInDiv = (str) => `<div>${str}</div>`;
+const toLowerCase = (str) => str.toLowerCase();
+
+const result = wrapInDiv(toLowerCase(trim(input)));
