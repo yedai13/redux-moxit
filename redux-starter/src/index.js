@@ -14,3 +14,22 @@ const transform = pipe(trim, toLowerCase, wrap("div"));
 console.log(transform(input));
 
 // const result = wrapInDiv(toLowerCase(trim(input)));
+
+//updating objects
+const person = {
+  name: "Facundo",
+  address: {
+    country: "USA",
+    city: "San Francisco",
+  },
+};
+// const updated = Object.assign({}, person, { name: "Pedro", age: 30 });
+const updated = {
+  ...person,
+  address: {
+    ...person.address,
+    city: "New York",
+  },
+  name: "Bob",
+};
+console.log(updated);
