@@ -1,5 +1,10 @@
 import configureStore from "./store/configureStore";
-import { bugAdded, bugRemoved, bugResolved } from "./store/bugs";
+import {
+  bugAdded,
+  bugRemoved,
+  bugResolved,
+  getUnresolvedBugs,
+} from "./store/bugs";
 import { projectAdded } from "./store/projects";
 
 const store = configureStore();
@@ -15,6 +20,10 @@ store.dispatch(bugAdded({ description: "Bug 2" }));
 store.dispatch(bugAdded({ description: "Bug 3" }));
 
 store.dispatch(bugResolved({ id: 1 }));
+
+const unresolvedBusgs = getUnresolvedBugs(store.getState());
+
+console.log(unresolvedBusgs);
 
 unsubscribe(); //para cancelar subcripcion a la store
 
