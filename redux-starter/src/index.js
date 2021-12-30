@@ -22,8 +22,9 @@ store.dispatch(bugAdded({ description: "Bug 3" }));
 store.dispatch(bugResolved({ id: 1 }));
 
 const unresolvedBusgs = getUnresolvedBugs(store.getState());
+const unresolvedBusgs2 = getUnresolvedBugs(store.getState());
 
-console.log(unresolvedBusgs);
+console.log(unresolvedBusgs === unresolvedBusgs2);
 
 unsubscribe(); //para cancelar subcripcion a la store
 
