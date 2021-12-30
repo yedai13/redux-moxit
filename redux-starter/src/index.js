@@ -9,17 +9,16 @@ import {
 } from "./store/bugs";
 import { projectAdded } from "./store/projects";
 import { userAdded } from "./store/users";
+import * as actions from "./store/api";
 
 const store = configureStore();
 
-store.dispatch({
-  type: "apiCallBegan",
-  payload: {
-    url: "bugs",
-    onSuccess: "bugsReceivid",
-    onError: "apiRequestFailed",
-  },
-});
+store.dispatch(
+  actions.apiCallBegan({
+    url: "/bugs",
+    onSuccess: "bugsReceived",
+  })
+);
 
 // store.dispatch((dispatch, getState) => {
 //   //call an API
