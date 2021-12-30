@@ -20,6 +20,11 @@ store.dispatch((dispatch, getState) => {
   //if the promise is rejected => dispatch()
 });
 
+store.dispatch({
+  type: "error",
+  payload: { message: "an error occurred." },
+});
+
 // const unsubscribe = store.subscribe(() => {
 //   console.log("Store changed!", store.getState());
 // });
