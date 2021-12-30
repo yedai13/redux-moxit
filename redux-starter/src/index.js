@@ -4,6 +4,7 @@ import {
   bugRemoved,
   bugResolved,
   getUnresolvedBugs,
+  bugAssignedToUser,
 } from "./store/bugs";
 import { projectAdded } from "./store/projects";
 import { userAdded } from "./store/users";
@@ -22,6 +23,8 @@ store.dispatch(projectAdded({ name: "Project 1" }));
 store.dispatch(bugAdded({ description: "Bug 1" }));
 store.dispatch(bugAdded({ description: "Bug 2" }));
 store.dispatch(bugAdded({ description: "Bug 3" }));
+
+store.dispatch(bugAssignedToUser({ bugId: 1, userId: 1 }));
 
 store.dispatch(bugResolved({ id: 1 }));
 
