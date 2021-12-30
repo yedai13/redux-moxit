@@ -6,12 +6,16 @@ import {
   getUnresolvedBugs,
 } from "./store/bugs";
 import { projectAdded } from "./store/projects";
+import { userAdded } from "./store/users";
 
 const store = configureStore();
 
 const unsubscribe = store.subscribe(() => {
   console.log("Store changed!", store.getState());
 });
+
+store.dispatch(userAdded({ name: "User 1" }));
+store.dispatch(userAdded({ name: "User 2" }));
 
 store.dispatch(projectAdded({ name: "Project 1" }));
 
