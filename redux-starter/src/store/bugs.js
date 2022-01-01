@@ -43,8 +43,7 @@ const slice = createSlice({
   },
 });
 
-// export
-const {
+export const {
   bugAdded,
   bugRemoved,
   bugResolved,
